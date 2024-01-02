@@ -1,0 +1,19 @@
+@import "../../Shared/_mixins";
+@import "../../Shared/_variables";
+
+.teamList{
+    &__header{
+        width: 846px;
+        display: grid;
+        gap: 16px;
+        justify-self: center;
+        text-align: center;
+    }
+
+&__title{
+    @include font-sans($textXXL, $color-white, 400, 75px);
+}
+&__subtitle{
+    @include font-sans($textL, $color-white, 400, 23.44px);
+}
+}

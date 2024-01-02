@@ -1,0 +1,9 @@
+@import './components/Shared/_mixins';
+@import './components/Shared/_variables';
+.page{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+     @include font-sans($textS, $color-black, 400, 18.75px);
+
+}
