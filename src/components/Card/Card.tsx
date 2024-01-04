@@ -1,15 +1,38 @@
-import { ITeamItem } from "../../redux/types";
-
+import { ITeamItem } from '../../redux/types';
+import './Card.scss';
+import like from '../../assets/image/like-icon.svg';
+import { Link } from 'react-router-dom';
 
 const Card: React.FC<ITeamItem> = (item) => {
-    return (
-      <div>
-       <img src={item.avatar} alt="Фото сотрудника"/>
-       <p>{item.last_name + " " + item.first_name}</p>
-       <button aria-label="Нравится" type="button"></button>
-      </div>
-    );
-  };
-  
-  export default Card;
-  
+  return (
+    <Link
+      to={`/${item.id}`}
+      className='card__container'
+    >
+      {/* <button
+        className='card__container'
+        // onClick={handleClickCard}
+      > */}
+      <img
+        className='card__avatar'
+        src={item.avatar}
+        alt='Фото сотрудника'
+      />
+      <p className='card__title'>{item.last_name + ' ' + item.first_name}</p>
+      <button
+        className='card__btn'
+        aria-label='Нравится'
+        type='button'
+      >
+        <img
+          className='card__like'
+          src={like}
+          alt='сердце'
+        />
+      </button>
+      {/* </button> */}
+    </Link>
+  );
+};
+
+export default Card;

@@ -1,0 +1,37 @@
+@import '../Shared/_mixins';
+@import '../Shared/_variables';
+.card {
+  &__container {
+    text-decoration: none;
+    width: 305px;
+    height: 263px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 20px 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0px 0.9960451126098633px 3.984180450439453px 0px #33333326;
+    gap: 16px;
+  }
+  &__avatar {
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+  }
+  &__title {
+    @include font-sans($textL, $color-black, 400, 23.44px);
+  }
+  &__btn {
+    width: 30px;
+    height: 28px;
+    padding: 0;
+    align-self: end;
+    background-color: $color-gray-light;
+    border-radius: 4px;
+  }
+  &__like {
+    width: 14px;
+    height: 12px;
+  }
+}

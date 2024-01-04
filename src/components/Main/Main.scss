@@ -1,0 +1,7 @@
+.main {
+  padding: 48px 80px 69px;
+
+  @media screen and (max-width: 560px) {
+    padding: 32px 35px;
+  }
+}

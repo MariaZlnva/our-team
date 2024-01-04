@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export interface IChildren {
   children?: ReactNode;
@@ -17,9 +17,16 @@ export type ITeamList = {
 };
 
 export interface ITeamListAction {
-    page: number,
-    per_page: number,
-    total: number,
-    total_pages: number,
-    data: ITeamItem[]
+  page: number;
+  per_page: number;
+  total: number;
+  total_pages: number;
+  data: ITeamItem[];
+}
+
+export interface IMemberAction {
+  data: IMember;
+}
+export interface IMember {
+  member: ITeamItem;
 }
