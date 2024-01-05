@@ -30,10 +30,23 @@
     border-radius: 8px;
     background-color: $color-gray-light;
     padding: 12px 8px 12px 16px;
+
+    &_error {
+      border-color: $color-red;
+    }
+    &:focus-visible {
+      outline: none;
+      border: 0.5px solid $color-gray;
+    }
   }
   &__error {
     display: none;
     height: 16px;
+    @include font-sans($textXSS, $color-red, 400, 11.72px);
+
+    &_active {
+      display: block;
+    }
   }
   &__btn {
     @include font-sans($textM, $color-white, 400, 21.79px);
@@ -41,5 +54,15 @@
     border-radius: 8px;
     width: 468px;
     padding: 13px 0;
+    margin-top: 8px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      opacity: 0.2;
+      cursor: default;
+    }
   }
 }

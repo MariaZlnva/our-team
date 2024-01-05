@@ -30,3 +30,10 @@ export interface IMemberAction {
 export interface IMember {
   member: ITeamItem;
 }
+
+export interface IInput {
+  userName: string;
+  email: string;
+  password: string;
+  retryPassword: string;
+}
