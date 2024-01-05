@@ -1,17 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from './store';
 // import type { PayloadAction } from "@reduxjs/toolkit";
-import { IMember, IMemberAction } from './types';
+import { IMemberAction } from './types';
 import axios from 'axios';
 
-const initialState: IMember = {
-  member: {
-    id: 0,
-    email: '',
-    first_name: '',
-    last_name: '',
-    avatar: '',
-  },
+interface MemberSliceState {
+  member: {};
+}
+const initialState: MemberSliceState = {
+  member: {},
 };
 
 export const getDataUser = createAsyncThunk('team/getDataUser', async (id: string) => {
@@ -28,18 +25,17 @@ export const memberSlice = createSlice({
     // },
   },
   extraReducers: (builder) => {
-    // builder.addCase(getDataUser.pending, (state) => {
-    //   state.member = {};
-    // });
+    builder.addCase(getDataUser.pending, (state) => {
+      state.member = {};
+    });
     builder.addCase(getDataUser.fulfilled, (state, action) => {
       console.log('в методе редюсера action =>', action.payload);
-      // state.teamList.push(...action.payload);
       state.member = action.payload;
     });
-    // builder.addCase(getDataUser.rejected, (state, action) => {
-    //   console.log(action, 'rejected');
-    //   state.teamList = [];
-    // });
+    builder.addCase(getDataUser.rejected, (state, action) => {
+      console.log(action, 'rejected');
+      state.member = {};
+    });
   },
 });
 

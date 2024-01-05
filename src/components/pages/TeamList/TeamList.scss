@@ -1,27 +1,40 @@
 @import '../../Shared/_mixins';
 @import '../../Shared/_variables';
-* {
-  //   outline: 1px red solid;
-}
+
 .teamList {
   &__header {
-    width: 846px;
+    width: 100%;
+    max-width: 846px;
     display: grid;
     gap: 16px;
     justify-self: center;
     text-align: center;
+    grid-area: teamList-header;
   }
 
   &__title {
     @include font-sans($textXXL, $color-white, 400, 75px);
+
+    @media screen and (max-width: 860px) {
+      @include font-sans($textXL-2, $color-white, 400, 42.19px);
+    }
   }
   &__subtitle {
     @include font-sans($textL, $color-white, 400, 23.44px);
+
+    @media screen and (max-width: 860px) {
+      @include font-sans($textM, $color-white, 400, 18.25px);
+    }
   }
   &__container {
     display: flex;
     gap: 56px;
     flex-direction: column;
+    padding: 48px 80px 69px;
+
+    @media screen and (max-width: 560px) {
+      padding: 32px 35px;
+    }
   }
   &__list {
     padding: 0;

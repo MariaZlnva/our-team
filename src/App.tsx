@@ -2,13 +2,17 @@ import { Route, Routes } from 'react-router-dom';
 import './App.scss';
 import TeamList from './components/pages/TeamList/TeamList';
 import TeamItem from './components/pages/TeamItem/TeamItem';
+import Register from './components/pages/Register/Register';
 
 function App() {
   return (
     <div className='page'>
       <Routes>
-        {/* <Route path="/sign-in" element={<Login />} />
-        <Route path="/sign-up" element={<Register />} /> */}
+        {/* <Route path="/sign-in" element={<Login />} /> */}
+        <Route
+          path='/sign-up'
+          element={<Register />}
+        />
         {/* <Route element={<ProtectedRoute />}> */}
         <Route
           path='/'

@@ -1,0 +1,45 @@
+@import '../../Shared/_mixins';
+@import '../../Shared/_variables';
+
+// * {
+//   outline: 1px red solid;
+// }
+.register {
+  &__container {
+    padding: 16px;
+    margin: auto;
+    border-radius: 16px;
+    box-shadow: 0px 4px 20px 0px #00000014;
+  }
+  &__title {
+    @include font-sans($textL, $color-black, 400, 23.44px);
+    margin-bottom: 16px;
+  }
+  &__form {
+  }
+  &__label {
+    @include font-sans($textM, $color-black, 400, 21.79px);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+  &__input {
+    @include font-sans($textS, $color-gray, 400, 16.41px);
+    margin-top: 8px;
+    border: 1px solid $color-gray-light;
+    border-radius: 8px;
+    background-color: $color-gray-light;
+    padding: 12px 8px 12px 16px;
+  }
+  &__error {
+    display: none;
+    height: 16px;
+  }
+  &__btn {
+    @include font-sans($textM, $color-white, 400, 21.79px);
+    background-color: $color-violet;
+    border-radius: 8px;
+    width: 468px;
+    padding: 13px 0;
+  }
+}
