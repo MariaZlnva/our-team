@@ -32,8 +32,23 @@ export interface IMember {
 }
 
 export interface IInput {
-  userName: string;
+  userName?: string;
   email: string;
   password: string;
-  retryPassword: string;
+  retryPassword?: string;
+}
+
+export interface IRegister {
+  id: string;
+  token: string;
+}
+
+export interface IToken {
+  token: string;
+}
+
+export interface IUserState {
+  id: string;
+  token: string;
+  isLoggedIn: boolean;
 }

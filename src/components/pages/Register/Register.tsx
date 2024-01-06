@@ -3,8 +3,11 @@ import React from 'react';
 import './Register.scss';
 import { useForm } from 'react-hook-form';
 import { IInput } from '../../../redux/types';
+import { useAppDispatch } from '../../../redux/store';
+import { registerUser } from '../../../redux/userSlice';
 
 const Register: React.FC = () => {
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
@@ -19,7 +22,9 @@ const Register: React.FC = () => {
         message: 'Убедитесь, что пароли совпадают',
       });
     }
-    console.log(data);
+    const { email, password } = data;
+    dispatch(registerUser({ email, password }));
+    // console.log(data);
   });
 
   return (
