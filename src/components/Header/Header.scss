@@ -1,0 +1,67 @@
+@import '../Shared/mixins';
+@import '../Shared/_variables';
+.header {
+  display: grid;
+  background-color: $color-violet;
+  color: $color-white;
+  padding: 32px 80px 47px;
+
+  @media screen and (max-width: 860px) {
+    padding: 12px 0px 64px 16px;
+  }
+
+  &_position-start {
+    grid-template-areas:
+      'btn-back  btn-exit'
+      'teamList-header teamList-header';
+  }
+
+  &_position {
+    grid-template-areas: 'btn-back teamItem-header btn-exit';
+    grid-template-columns: min-content auto min-content;
+
+    @media screen and (max-width: 860px) {
+      grid-template-areas:
+        'btn-back btn-exit'
+        'teamItem-header teamItem-header';
+    }
+  }
+
+  &__btn {
+    @include font-sans($textM, $color-gray-light, 400, 21.79px);
+    width: 81px;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px $color-gray-light solid;
+    background-color: transparent;
+    color: $color-gray-light;
+
+    @media screen and (max-width: 860px) {
+      display: none;
+    }
+  }
+  &__btn-image {
+    display: none;
+    width: 40px;
+    height: 40px;
+
+    @media screen and (max-width: 860px) {
+      display: block;
+    }
+  }
+
+  &__btn-back {
+    grid-area: btn-back;
+
+    &_invisible {
+      opacity: 0;
+    }
+  }
+
+  &__btn-exit {
+    grid-area: btn-exit;
+    &_position {
+      justify-self: end;
+    }
+  }
+}

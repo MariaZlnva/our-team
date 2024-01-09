@@ -1,0 +1,88 @@
+@import '../../Shared/_mixins';
+@import '../../Shared/_variables';
+
+.teamItem {
+  width: 100%;
+  &__header {
+    width: 100%;
+    max-width: 846px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    // justify-self: center;
+    grid-area: teamItem-header;
+    padding-left: 28px;
+
+    @media screen and (max-width: 860px) {
+      gap: 16px;
+      flex-direction: column-reverse;
+      padding-left: 0px;
+    }
+  }
+  &__avatar {
+    width: 187px;
+    height: 187px;
+    border-radius: 100px;
+  }
+  &__wrap {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+
+    @media screen and (max-width: 860px) {
+      align-items: center;
+      margin-top: 10px;
+    }
+  }
+  &__title {
+    @include font-sans($textXXL, $color-white, 400, 75px);
+
+    @media screen and (max-width: 860px) {
+      text-align: center;
+      @include font-sans($textXL-2, $color-white, 400, 42.19px);
+    }
+  }
+  &__subtitle {
+    @include font-sans($textXL, $color-white, 400, 37.5px);
+
+    @media screen and (max-width: 860px) {
+      @include font-sans($textL, $color-white, 400, 23.44px);
+    }
+  }
+  &__container {
+    @include font-sans($textM, $color-black, 400, 21.79px);
+
+    padding: 49px 80px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 129px;
+
+    @media screen and (max-width: 860px) {
+      padding: 32px 16px;
+      flex-direction: column-reverse;
+      gap: 32px;
+    }
+  }
+  &__description {
+    width: 100%;
+    max-width: 630px;
+    display: grid;
+    gap: 23px;
+  }
+  &__paragraph {
+  }
+
+  &__contact {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  &__contact-item {
+    display: flex;
+    gap: 8px;
+    min-width: 172px;
+  }
+}

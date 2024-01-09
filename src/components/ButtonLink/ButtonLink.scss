@@ -1,0 +1,29 @@
+.btn-link {
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.21;
+    margin: 0 auto;
+  }
+
+  &__text {
+    // color: #8b8b8b;
+    margin: 0 6px 0 0;
+  }
+
+  &__link {
+    // color: #4285f4;
+    text-decoration: none;
+    &:hover{
+        opacity: 0.8;
+    }
+  }
+
+  &__link:focus {
+    outline: none;
+    border-bottom: 1px solid #4285f4;
+  }
+}

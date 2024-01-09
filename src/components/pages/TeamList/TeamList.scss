@@ -1,0 +1,73 @@
+@import '../../Shared/_mixins';
+@import '../../Shared/_variables';
+
+.teamList {
+    width: 100%;
+    // margin-top: 10px;
+
+  &__header {
+    width: 100%;
+    max-width: 846px;
+    display: grid;
+    gap: 20px;
+    justify-self: center;
+    text-align: center;
+    grid-area: teamList-header;
+    margin-bottom: 17px;
+
+    @media screen and (max-width: 860px) {
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+  }
+
+
+  &__title {
+    @include font-sans($textXXL, $color-white, 400, 65px);
+
+    @media screen and (max-width: 860px) {
+      @include font-sans($textXL-2, $color-white, 400, 42.19px);
+    }
+  }
+  &__subtitle {
+    @include font-sans($textL, $color-white, 400, 22.44px);
+
+    @media screen and (max-width: 860px) {
+      @include font-sans($textM, $color-white, 400, 18.25px);
+    }
+  }
+  &__container {
+    display: flex;
+    gap: 56px;
+    flex-direction: column;
+    padding: 48px 80px 69px;
+
+    @media screen and (max-width: 560px) {
+      padding: 32px 35px;
+    }
+  }
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(305px, auto));
+    justify-content: center;
+    gap: 20px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+  &__btn-more {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    align-self: center;
+    border: 1px solid $color-black;
+    border-radius: 8px;
+  }
+  &__arrow {
+    margin-left: 8px;
+  }
+}
