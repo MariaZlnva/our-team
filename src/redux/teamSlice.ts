@@ -12,7 +12,6 @@ export const getList = createAsyncThunk('team/getList', async () => {
   const response = await axios.get<ITeamListAction>(
     'https://reqres.in/api/users?page=1&per_page=12',
   );
-  console.log('ответ api list=>', response.data.data);
   return response.data.data;
 });
 
@@ -20,17 +19,22 @@ export const teamSlice = createSlice({
   name: 'team',
   initialState,
   reducers: {
-    // addTask: (state, action: PayloadAction<ITask>) => {
-    //   state.taskList.unshift(action.payload);
-    // },
+    toggleLike: (state, action) => {
+      state.teamList.map((item) => {
+        if (item.id === action.payload) {
+          item.isLiked = !item.isLiked;
+        }
+      });
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getList.pending, (state) => {
       state.teamList = [];
     });
     builder.addCase(getList.fulfilled, (state, action) => {
-      console.log('в методе редюсера action =>', action);
-      // state.teamList.push(...action.payload);
+      action.payload.map((item) => {
+        item.isLiked = false;
+      })
       state.teamList = action.payload.slice();
     });
     builder.addCase(getList.rejected, (state, action) => {
@@ -40,10 +44,7 @@ export const teamSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
-// export const {
-
-// } = teamSlice.actions;
 export const teamList = (state: RootState) => state.team.teamList;
+export const { toggleLike } = teamSlice.actions;
 
 export default teamSlice.reducer;

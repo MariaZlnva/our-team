@@ -1,10 +1,10 @@
-@import "../../Shared/_mixins";
-@import "../../Shared/_variables";
+@import '../../Shared/_mixins';
+@import '../../Shared/_variables';
 
 // * {
 //   outline: 1px red solid;
 // }
-.register {
+.login {
   &__container {
     padding: 16px;
     margin: auto;
@@ -70,12 +70,5 @@
     @media screen and (max-width: 860px) {
       max-width: 343px;
     }
-  }
-
-  &__confirm {
-    display: flex;
-    justify-content: center;
-    height: 16px;
-    @include font-sans($textS, $color-red, 700, 11.72px);
   }
 }

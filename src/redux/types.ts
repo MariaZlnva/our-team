@@ -5,11 +5,12 @@ export interface IChildren {
 }
 
 export interface ITeamItem {
-  id: number;
+  id: number | null;
   email: string;
   first_name: string;
   last_name: string;
   avatar: string;
+  isLiked?: boolean;
 }
 
 export type ITeamList = {
@@ -25,7 +26,7 @@ export interface ITeamListAction {
 }
 
 export interface IMemberAction {
-  data: IMember;
+  data: ITeamItem;
 }
 export interface IMember {
   member: ITeamItem;
@@ -49,6 +50,12 @@ export interface IToken {
 
 export interface IUserState {
   id: string;
-  token: string;
+  // token: string;
   isLoggedIn: boolean;
+}
+
+export interface IBtnLink {
+  text: string;
+  textLink: string;
+  path: string;
 }

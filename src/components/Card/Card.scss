@@ -2,7 +2,7 @@
 @import '../Shared/_variables';
 .card {
   &__container {
-    text-decoration: none;
+    // text-decoration: none;
     width: 305px;
     height: 263px;
     display: flex;
@@ -21,6 +21,8 @@
   }
   &__title {
     @include font-sans($textL, $color-black, 400, 23.44px);
+    text-decoration: none;
+
   }
   &__btn {
     width: 30px;

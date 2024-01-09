@@ -3,15 +3,24 @@ import back from '../../assets/image/icon-back.svg';
 import exit from '../../assets/image/icon-exit.svg';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { IChildren } from '../../redux/types';
+import { deleteToken } from '../../redux/userSlice';
+import { useAppDispatch } from '../../redux/store';
 
 export const Header = ({ children }: IChildren) => {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location.pathname);
+  const dispatch = useAppDispatch();
+
+  
+  const handleLogout =() => {
+    dispatch(deleteToken());
+    navigate('/sign-in');
+  }
+
   return (
     <header
       className={
-        'header' + ' ' + (location.pathname === '/' ? 'header_position-start' : 'header_position')
+        'header' + ' ' + (location.pathname === '/users' ? 'header_position-start' : 'header_position')
       }
     >
       <button
@@ -27,7 +36,7 @@ export const Header = ({ children }: IChildren) => {
 
       <button
         className={
-          'header__btn-image' + ' ' + (location.pathname === '/' && 'header__btn-back_invisible')
+          'header__btn-image' + ' ' + (location.pathname === '/users' && 'header__btn-back_invisible')
         }
         onClick={() => navigate(-1)}
       >
@@ -36,7 +45,7 @@ export const Header = ({ children }: IChildren) => {
           alt='Стрелка назад'
         />
       </button>
-      <button className='header__btn header__btn-exit header__btn-exit_position'>Выход</button>
+      <button className='header__btn header__btn-exit header__btn-exit_position' onClick={handleLogout}>Выход</button>
       <button className='header__btn-image header__btn-exit_position'>
         <img
           src={exit}

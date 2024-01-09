@@ -2,25 +2,35 @@
 @import '../../Shared/_variables';
 
 .teamList {
+    width: 100%;
+    // margin-top: 10px;
+
   &__header {
     width: 100%;
     max-width: 846px;
     display: grid;
-    gap: 16px;
+    gap: 20px;
     justify-self: center;
     text-align: center;
     grid-area: teamList-header;
+    margin-bottom: 17px;
+
+    @media screen and (max-width: 860px) {
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
   }
 
+
   &__title {
-    @include font-sans($textXXL, $color-white, 400, 75px);
+    @include font-sans($textXXL, $color-white, 400, 65px);
 
     @media screen and (max-width: 860px) {
       @include font-sans($textXL-2, $color-white, 400, 42.19px);
     }
   }
   &__subtitle {
-    @include font-sans($textL, $color-white, 400, 23.44px);
+    @include font-sans($textL, $color-white, 400, 22.44px);
 
     @media screen and (max-width: 860px) {
       @include font-sans($textM, $color-white, 400, 18.25px);

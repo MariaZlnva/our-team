@@ -10,23 +10,53 @@ import { getList } from '../../../redux/teamSlice';
 const TeamList: React.FC = () => {
   const dispatch = useAppDispatch();
   const teamList = useAppSelector((state) => state.team.teamList);
-  console.log('смотрим teamList при загрузке страницы =>', teamList);
-  const [countCardRender, setCountCardRender] = useState(8);
+  const [countCardRender, setCountCardRender] = useState(0);
+  const windowInnerWidth = window.innerWidth;
+
 
   useEffect(() => {
-    console.log('при первом рендере useEffect');
     if (teamList.length === 0) {
-      console.log('делаю запрос пользователей с апи');
       dispatch(getList());
     }
   }, []);
+
+  useEffect(() => {
+    //  меняет стейт перемен. при увелич. ширины экрана
+    if (windowInnerWidth > 768) {
+      setCountCardRender(8);
+    }
+    else if (windowInnerWidth <=768){
+      setCountCardRender(4);
+
+    }
+    function handleResize() {
+      if (windowInnerWidth > 768) {
+        setCountCardRender(8);
+      }
+      if (windowInnerWidth <=768){
+        setCountCardRender(4);
+
+      }
+    }
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.addEventListener('resize', handleResize);
+    };
+  }, [windowInnerWidth]);
+
   const handleClickBtnMore = () => {
-    setCountCardRender(countCardRender + 4);
+    if (windowInnerWidth > 768) {
+      setCountCardRender(countCardRender + 4);
+    }
+   if (windowInnerWidth <=768){
+      setCountCardRender(countCardRender + 2);
+    }
   };
 
   const teamListTorender = teamList.slice(0, countCardRender);
+
   return (
-    <div>
+    <div className='teamList'>
       <Header>
         <div className='teamList__header'>
           <h1 className='teamList__title'>Наша команда</h1>

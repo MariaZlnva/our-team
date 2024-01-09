@@ -8,8 +8,6 @@ const register = async ({ email, password }: IInput) => {
     email,
     password,
   });
-  console.log(response);
-
   return response.data;
 };
 
@@ -18,9 +16,7 @@ const login = async ({ email, password }: IInput) => {
     email,
     password,
   });
-  if (response.data.token) {
-    localStorage.setItem('token', JSON.stringify(response.data.token));
-  }
+ 
   return response.data;
 };
 

@@ -2,18 +2,21 @@
 @import '../../Shared/_variables';
 
 .teamItem {
+  width: 100%;
   &__header {
     width: 100%;
     max-width: 846px;
     display: flex;
     align-items: center;
     gap: 32px;
-    justify-self: center;
+    // justify-self: center;
     grid-area: teamItem-header;
+    padding-left: 28px;
 
     @media screen and (max-width: 860px) {
       gap: 16px;
       flex-direction: column-reverse;
+      padding-left: 0px;
     }
   }
   &__avatar {
@@ -28,6 +31,7 @@
 
     @media screen and (max-width: 860px) {
       align-items: center;
+      margin-top: 10px;
     }
   }
   &__title {
@@ -46,6 +50,8 @@
     }
   }
   &__container {
+    @include font-sans($textM, $color-black, 400, 21.79px);
+
     padding: 49px 80px 0px;
     display: flex;
     justify-content: center;
@@ -61,7 +67,7 @@
     width: 100%;
     max-width: 630px;
     display: grid;
-    gap: 16px;
+    gap: 23px;
   }
   &__paragraph {
   }
