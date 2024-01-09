@@ -7,7 +7,6 @@ import Login from "./components/pages/Login/Login";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
-  // const isLoggedIn = localStorage.getItem('token');
 
   return (
     <div className="page">
