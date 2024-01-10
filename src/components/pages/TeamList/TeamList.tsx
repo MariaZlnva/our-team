@@ -13,7 +13,6 @@ const TeamList: React.FC = () => {
   const [countCardRender, setCountCardRender] = useState(0);
   const windowInnerWidth = window.innerWidth;
 
-
   useEffect(() => {
     if (teamList.length === 0) {
       dispatch(getList());

@@ -13,7 +13,7 @@ const TeamItem: React.FC = () => {
 
   const dispatch = useAppDispatch();
   const member = useAppSelector((state) => state.member.member);
-  console.log(member);
+
   useEffect(() => {
     if (id) dispatch(getDataUser(id));
   }, []);

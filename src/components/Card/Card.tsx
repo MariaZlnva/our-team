@@ -22,7 +22,7 @@ const Card: React.FC<ITeamItem> = (item) => {
         alt='Фото сотрудника'
       />
       <Link
-      to={`/users/${item.id}`} className='card__title'> <p >{item.last_name + ' ' + item.first_name}</p></Link>
+      to={`/${item.id}`} className='card__title'> <p >{item.last_name + ' ' + item.first_name}</p></Link>
       <button
         className='card__btn'
         aria-label='Нравится'

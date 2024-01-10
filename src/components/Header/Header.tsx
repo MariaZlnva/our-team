@@ -20,7 +20,7 @@ export const Header = ({ children }: IChildren) => {
   return (
     <header
       className={
-        'header' + ' ' + (location.pathname === '/users' ? 'header_position-start' : 'header_position')
+        'header' + ' ' + (location.pathname === '/' ? 'header_position-start' : 'header_position')
       }
     >
       <button
@@ -36,7 +36,7 @@ export const Header = ({ children }: IChildren) => {
 
       <button
         className={
-          'header__btn-image' + ' ' + (location.pathname === '/users' && 'header__btn-back_invisible')
+          'header__btn-image' + ' ' + (location.pathname === '/' && 'header__btn-back_invisible')
         }
         onClick={() => navigate(-1)}
       >
